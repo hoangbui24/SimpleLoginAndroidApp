@@ -18,7 +18,7 @@ public class LoginFormAndroid extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginFormAndroidBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_login_form_android);
+        setContentView(binding.getRoot());
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -43,9 +43,10 @@ public class LoginFormAndroid extends AppCompatActivity {
                 }
             }
         });
+
         binding.SignupRedirect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent intent = new Intent(LoginFormAndroid.this, SignupFormAndroid.class);
                 startActivity(intent);
             }
