@@ -12,16 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginFormAndroid"
         tools:targetApi="31">
-        <activity
+		<activity
             android:name=".LoginFormAndroid"
-            android:exported="false" />
-        <activity
+            android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity
             android:name=".SignupFormAndroid"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<activity
+            android:exported="true"
+            android:name=".MainActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
     </application>
 
 </manifest>
