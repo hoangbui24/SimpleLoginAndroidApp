@@ -18,7 +18,18 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            debuggable false
+            shrinkResources true // Loại bỏ các tài nguyên không dùng tới
+            minifyEnabled true // Dùng để thu gọn code
+            //useProguard false // Dùng để làm rối code
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            shrinkResources true // Loại bỏ các tài nguyên không dùng tới
+            minifyEnabled true // Dùng để thu gọn code
+            //useProguard false // Dùng để làm rối code
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
